@@ -7,14 +7,14 @@ var orm = {
         connection.query(queryString, [table], function(err, result) {
             return result;
         });
-    }
+    },
     insertOne: function(table, burger_name, cb) {
         var queryString = "INSERT INTO " + table + "(burger_name) VALUES " + name;
 
         connection.query(queryString, [table, name], function(err, result) {
             return result;
         });
-    }
+    },
     updateOne: function(table, burger_name, devoured, cb) {
         var queryString = "UPDATE " + table + "SET " + devoured + "= TRUE WHERE burger_name = " + burger_name;
 
