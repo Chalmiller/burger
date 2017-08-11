@@ -15,7 +15,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-    burger.selectOne([
+    burger.insertOne([
         "burger_name", "devoured"
     ], [
         req.body.burger_name
@@ -29,7 +29,7 @@ router.put("/:id", function(req, res) {
 
     console.log("Devoured", devoured);
 
-    burger.update({
+    burger.updateOne({
         devoured: req.body.devoured
     }, devoured, function() {
         res.redirect("/");
